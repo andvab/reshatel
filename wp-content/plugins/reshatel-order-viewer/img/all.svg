@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 49 64" width="49" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" preserveAspectRatio="xMidYMid">
+<defs id="defs4">
+<style id="style6">.cls-1 {
+        fill: #b3b3b3;
+      }
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+      .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #d6d6d6;
+      }</style>
+</defs>
+<g id="g4149" fill-rule="evenodd">
+<path id="path10" d="m49 16.842v42.105c0 2.791-2.27 5.053-5.069 5.053h-38.862c-2.8 0-5.069-2.262-5.069-5.053v-53.894c0-2.791 2.269-5.053 5.069-5.053h27.034l16.897 16.842z" class="cls-1" fill="#b3b3b3"/>
+<path id="path14" d="m49 15.899v2.096h-13.813c-2.86 0-4.179-2.32-4.179-5.181v-12.814h2.092l15.9 15.899z" class="cls-3" fill="#d6d6d6"/>
+</g>
+</svg>

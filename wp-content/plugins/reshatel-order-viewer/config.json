@@ -1,0 +1,14 @@
+{
+    "db": {
+        "order": "wp_lk_order",
+        "type": "wp_lk_type",
+        "section": "wp_lk_section",
+        "category": "wp_lk_category",
+        "file": "wp_lk_order_file"
+    },
+    "api": {
+        "url": "https://lk.reshatel.org/api/v1/",
+        "key": "zZ(rcA5Ly1"
+    },
+    "domain": "https://lk.reshatel.org"
+}
