@@ -62,3 +62,5 @@
 /wp-content/plugins/reshatel-application-forms/spamers.log
 /wp-content/plugins/reshatel-form-to-lk/spamers.log
 /wp-content/plugins/reshatel-form-to-lk/log.log
+/wp-content/advanced-cache.php
+/wp-content/cache/
