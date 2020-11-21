@@ -6,68 +6,46 @@ jQuery(function ($) {
     $('.online-help').on('click', function () {
         yaCounter20837425.reachGoal('online-help');
         ga('send', 'event', 'form', 'online-help');
-        fbq('trackCustom', 'Online');
-        fbq('track', 'Lead');
     });
     $('.tasks').on('click', function () {
         yaCounter20837425.reachGoal('tasks');
         ga('send', 'event', 'form', 'tasks');
-        fbq('trackCustom', 'Zadachi');
-        fbq('track', 'Lead');
     });
     $('.kontrolnaya').on('click', function () {
         yaCounter20837425.reachGoal('kontrolnaya');
         ga('send', 'event', 'form', 'kontrolnaya');
-        fbq('trackCustom', 'Kontrolnaya');
-        fbq('track', 'Lead');
     });
     $('.kursovaya').on('click', function () {
         yaCounter20837425.reachGoal('kursovaya');
         ga('send', 'event', 'form', 'kursovaya');
-        fbq('trackCustom', 'Kursovaya');
-        fbq('track', 'Lead');
     });
     $('.referat').on('click', function () {
         yaCounter20837425.reachGoal('referat');
         ga('send', 'event', 'form', 'referat');
-        fbq('trackCustom', 'Referat');
-        fbq('track', 'Lead');
     });
     $('.diplom').on('click', function () {
         yaCounter20837425.reachGoal('diplom');
         ga('send', 'event', 'form', 'diplom');
-        fbq('trackCustom', 'Diplom');
-        fbq('track', 'Lead');
     });
     $('.practice').on('click', function () {
         yaCounter20837425.reachGoal('practice');
         ga('send', 'event', 'form', 'practice');
-        fbq('trackCustom', 'Practice');
-        fbq('track', 'Lead');
     });
     $('.essay').on('click', function () {
         yaCounter20837425.reachGoal('essay');
         ga('send', 'event', 'form', 'essay');
-        fbq('trackCustom', 'Essay');
-        fbq('track', 'Lead');
     });
     $('.presentation').on('click', function () {
         yaCounter20837425.reachGoal('presentation');
         ga('send', 'event', 'form', 'presentation');
-        fbq('trackCustom', 'Presentation');
-        fbq('track', 'Lead');
     });
     $('.translation').on('click', function () {
         yaCounter20837425.reachGoal('perevod');
         ga('send', 'event', 'form', 'perevod');
-        fbq('trackCustom', 'Perevod');
-        fbq('track', 'Lead');
     });
     $('.mc-article').on('click', function () {
         yaCounter20837425.reachGoal('article');
         ga('send', 'event', 'form', 'article');
-        fbq('trackCustom', 'Article');
-        fbq('track', 'Lead');
     });
     $('.mc-lk-order').on('click', function () {
         yaCounter20837425.reachGoal('lk-price');
@@ -77,12 +55,9 @@ jQuery(function ($) {
     });
     $('.fc-form-1').on('submit', function () {
         yaCounter20837425.reachGoal('get-cost');
-        fbq('trackCustom', 'Get-cost');
-        fbq('track', 'Lead');
     });
     $('.fc-form-2').on('submit', function () {
         yaCounter20837425.reachGoal('get-cost-landing');
-        fbq('track', 'Lead');
     });
 
 

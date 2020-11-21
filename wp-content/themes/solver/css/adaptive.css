@@ -2,11 +2,15 @@
 #menu-main-menu li:nth-child(2),
 #menu-main-menu li:nth-child(3),
 #article .pay-slide,
+.only-mobile,
 #main-content .image_mobile{
     display: none;
 }
 
 @media screen and (max-width: 959px){
+    .only-mobile {
+        display: block;
+    }
     #site-header .span8 {
         width: 196px;
     }
@@ -14,6 +18,14 @@
         width: 90px;
         float: right;
         margin: 3px;
+    }
+    #site-header .header-left {
+        width: 196px;
+        float: left;
+        margin: 0;
+    }
+    #site-header .header-middle {
+        display: none;
     }
     .main-banner .banner-link {
         margin-bottom: 40px;
@@ -89,6 +101,12 @@
     }
     .work-block figure img{
         height: 80px;
+    }
+    .header-social {
+        text-align: center;
+        margin-top: 5px;
+        padding: 10px;
+        border-bottom: 1px solid #1623bf;
     }
 
     .adaptive-slider-inner{
@@ -505,7 +523,6 @@
     .work-block{
         float: left;
         text-align: center;
-        width: auto;
         vertical-align: top;
         width: 200px;
         height: 150px;
