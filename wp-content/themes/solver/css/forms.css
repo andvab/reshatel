@@ -416,3 +416,31 @@
 .vacancy-form-button:hover {
     background: #1e7dfa;
 }
+
+.wpcf7 form.spam .wpcf7-response-output,
+.wpcf7 form.invalid .wpcf7-response-output {
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 0;
+    padding: 10px;
+    margin: 0 0 1em;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 0;
+    padding: 10px;
+    margin: 0 0 1em;
+}
+.wpcf7-form .wpcf7-response-output:before {
+    font: 26px/30px dashicons;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+.wpcf7 form.sent .wpcf7-response-output:before {
+    content: "\f147";
+}
+.wpcf7 form.spam .wpcf7-response-output:before,
+.wpcf7 form.invalid .wpcf7-response-output:before {
+    content: "\f158";
+}
