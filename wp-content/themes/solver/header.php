@@ -37,7 +37,7 @@
             color2: '000000',
             color3: '198BFF'
         }, 96800481);
-        VK.Widgets.CommunityMessages("vk_community_messages", 96800481, {});
+        // VK.Widgets.CommunityMessages("vk_community_messages", 96800481, {});
     };
 
     // Функция асинхронной загрузки
@@ -66,7 +66,7 @@
                                      alt="Решатель - консультации, решение задач, контрольные"></a>
                     <span style="display: none;" class="popmake-class"></span>
                     <? else: ?>
-                    <div class="site-logo__img popmake-covid">
+                    <div class="site-logo__img">
                         <img src="<?= $site_logo_thumb ?>" alt="Решатель - консультации, решение задач, контрольные">
                         <? endif ?>
                     </div>

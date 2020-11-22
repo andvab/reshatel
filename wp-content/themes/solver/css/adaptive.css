@@ -577,6 +577,9 @@
     .city-text__content {
         margin-top: 45px;
     }
+    .vacancy-form {
+        width: 96%;
+    }
 
 } @media screen and (max-width: 640px){
     #main-content .span4,

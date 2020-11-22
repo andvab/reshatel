@@ -1023,16 +1023,6 @@ path {
 }
 
 /**
- * Buttons
- */
-.button-feedback,
-.button-callback {
-    display: block;
-    width: 120px;
-    height: 30px;
-}
-
-/**
  * Feature
  */
 .feature {
