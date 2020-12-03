@@ -44,6 +44,7 @@ class EmailChecker
             ],
             'yandex.ru' => [
                 'yndex.ru',
+                'yande.ru',
                 'yanbex.ru',
                 'uandex.ru',
                 'yandex.ru.ru',
