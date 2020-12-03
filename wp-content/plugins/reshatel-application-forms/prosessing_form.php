@@ -4,6 +4,8 @@
  * Файл обработки формы, отправка и принятие данных JSON
  */
 
+include_once __DIR__.'/../../shared/emailChecker.php';
+
 /**
  * Функция обработки данных формы
  * */
@@ -32,12 +34,16 @@ function re_processing_form() {
         $action_form = re_form_check($_GET['re_action_form'], 'action_form');
 
         if (!$_GET['re_redirect_result_form']) {
+            $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
+            if (!EmailChecker::isLooksCorrect($email)) {
+                $checker = new EmailChecker($email);
+                $email = $checker->tryFix();
+            }
+            $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
+            $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
+
             switch ($action_form) {
                 case 'online-pomoshh':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
-
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $duration = re_form_check($_POST[$re_data['form']['name_fields']['duration']], 'other_input_text');
                     $date_and_time = re_form_check($_POST[$re_data['form']['name_fields']['date_and_time']], 'date_and_time');
@@ -69,10 +75,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'reshenie-zadach':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
-
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
                     $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
@@ -99,10 +101,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'kontrolnye-raboty':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
-
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
                     $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
@@ -129,9 +127,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'kursovye-raboty':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
@@ -169,9 +164,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'diploms':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
@@ -209,9 +201,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'referats':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
@@ -249,9 +238,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'essay':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
@@ -289,9 +275,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'otchety-po-praktike':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
@@ -329,9 +312,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'presentations':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
                     $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
@@ -354,8 +334,6 @@ function re_processing_form() {
                             'subject' => $subject,
                             'pages_start' => $number_start,
                             'pages_end' => $number_end,
-                            'unique_persent' => $unical_procent,
-                            'unique_tester' => $site_unical,
                             'date2' => $date,
                                 ), $files['post']);
 
@@ -368,9 +346,6 @@ function re_processing_form() {
                     break;
                 case 'choose_type':
                     $type_form = (int) $_POST[$re_data['form']['name_fields']['select_type']];
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
 
                     $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
@@ -455,10 +430,6 @@ function re_processing_form() {
                     re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'perevody':
-                    $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
-                    $email = re_form_check($_POST[$re_data['form']['name_fields']['email']], 'email');
-                    $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
-
                     $translate_direction = explode('*', re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text'), 2);
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
                     $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
@@ -587,6 +558,7 @@ function re_form_check($data, $type) {
             'ids' => array()
         );
 
+        $files_dir = '';
         if (is_array($data)) {
             $i = 0;
             foreach ($data as $file) {

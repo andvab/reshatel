@@ -7,6 +7,7 @@
   Author: Rusty Shackleford
  */
 
+include_once __DIR__.'/../../shared/emailChecker.php';
 
 $site2 = 'https://lk.reshatel.org';
 define('LINK_API_CREATE2', $site2 . '/api/v1/order/create/');
@@ -44,6 +45,10 @@ class RFTL {
             return;
         }
 
+        if (!EmailChecker::isLooksCorrect($data['user_email'])) {
+            $checker = new EmailChecker($data['user_email']);
+            $data['user_email'] = $checker->tryFix();
+        }
 
         if (isset($content['Прикрепите файлы'])) {
             preg_match_all('/<a href=\'(.*?)\'>/s', $content['Прикрепите файлы'], $matches);
