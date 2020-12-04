@@ -73,7 +73,8 @@ class EmailChecker
                 'gail.ru',
                 'amil.ru',
                 'msil.ru',
-                'nail.ru'
+                'nail.ru',
+                'mil.ru'
             ],
             'inbox.ru' => [
                 'indox.ru',
@@ -94,6 +95,17 @@ class EmailChecker
                 'ramdler.ru',
                 'gambler.ru',
                 'rfmbler.ru'
+            ],
+            'icloud.com' => [
+                'icloud.ru',
+                'cloud.com',
+                'iclaud.com',
+                'ocloud.com',
+                'ucloud.com',
+                'icloid.com',
+                'ikloud.com',
+                'iclous.com',
+                'iclouf.com'
             ]
         ];
         $this->zones = [
