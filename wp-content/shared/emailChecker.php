@@ -37,6 +37,7 @@ class EmailChecker
                 'hmail.com',
                 'gmeil.com',
                 'gmal.ru',
+                'gmai.ru',
                 'gmal.com',
                 'gmai.com',
                 'jmail.com',
@@ -146,12 +147,11 @@ class EmailChecker
 
     public static function isLooksCorrect($email)
     {
-        $pattern = "/(@mail.ru)|(@inbox.ru)|(@mail.ua)|(@bk.ru)|(@list.ru)|
-        (yandex.ru)|(@ya.ru)|(yandex.com)|(@yandex.kz)|(@yandex.ua)|(@yandex.by)|(@narod.ru)|(@gmail.com)|
-        (@yahoo.com)|(@yahoo.fr)|(rocketmail.com)|(@rambler.ru)|(ro.ru)|(@icloud.com)|(@reshatel.org)|(@ukr.net)|
-        (@hotmail.com)|(@ngs.ru)|(@tut.by)|(@outlook.com)|(@me.com)|(@sibmail.com)|(@i.ua)|(@inbox.lv)|(@meta.ua)|
-        (qq.com)|(@my.com)|(@edu.hse.ru)|(@live.ru)|(@bigmir.net)|(@lenta.ru)|(@e1.ru)|(@protonmail.com)|
-        (@qip.ru)|(phystech.edu)|(@pfur.ru)/";
+        $pattern = "/(@mail.ru)|(@inbox.ru)|(@mail.ua)|(@bk.ru)|(@list.ru)|(yandex.ru)|(@ya.ru)|(yandex.com)|".
+            "(@yandex.kz)|(@yandex.ua)|(@yandex.by)|(@narod.ru)|(@gmail.com)|(@yahoo.com)|(@yahoo.fr)|(rocketmail.com)|".
+            "(@rambler.ru)|(ro.ru)|(@icloud.com)|(@reshatel.org)|(@ukr.net)|(@hotmail.com)|(@ngs.ru)|(@tut.by)|".
+            "(@outlook.com)|(@me.com)|(@sibmail.com)|(@i.ua)|(@inbox.lv)|(@meta.ua)|(qq.com)|(@my.com)|(@edu.hse.ru)|".
+            "(@live.ru)|(@bigmir.net)|(@lenta.ru)|(@e1.ru)|(@protonmail.com)|(@qip.ru)|(phystech.edu)|(@pfur.ru)/";
         return preg_match($pattern, $email);
     }
 }
