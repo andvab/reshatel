@@ -60,6 +60,7 @@ class EmailChecker
                 'yamdex.ru',
                 'yamdez.ru',
                 'yandec.ru',
+                'yanndex.ru'
             ],
             'mail.ru' => [
                 'maii.ru',

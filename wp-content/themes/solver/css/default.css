@@ -208,8 +208,11 @@ a:hover {
 }
 
 .site-logo__img {
+    width: 100px;
+    height: 100px;
     float: left;
     margin-right: 10px;
+    background: url(../img/logo.svg) no-repeat center;
 }
 
 .site-logo__text {
@@ -1461,9 +1464,9 @@ a.post-title:hover {
     float: left;
     margin: 0 12px 12px 0;
     border-radius: 7px;
-    -webkit-box-shadow: 0px 0px 12px -5px #000000;
-    -moz-box-shadow: 0px 0px 12px -5px #000000;
-    box-shadow: 0px 0px 12px -5px #000000;
+    -webkit-box-shadow: 0 0 12px -5px #000000;
+    -moz-box-shadow: 0 0 12px -5px #000000;
+    box-shadow: 0 0 12px -5px #000000;
 }
 
 /**
@@ -1487,7 +1490,7 @@ a.post-title:hover {
 }
 
 .solver__content {
-    font-style: 'PT Sans', Arial;
+    font-family: 'PT Sans', Arial;
     font-size: 12px;
     text-align: center;
 }
@@ -1748,7 +1751,7 @@ img {
 }
 
 #slider {
-    color: #66666;
+    color: #666666;
     font-family: Georgia;
     font-size: 20px;
 }
@@ -1801,7 +1804,7 @@ a.pluso-more {
     display: block;
     float: none;
     padding-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-top: 10px;
     border-bottom: 2px solid #f2f2f2;

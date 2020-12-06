@@ -13,13 +13,16 @@
             echo ' | ' . sprintf(__('Page %s', 'Solver'), max($paged, $page));
         ?>
     </title>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="msvalidate.01" content="DAE7B74646E3C3044B7A944CBCC887ED"/> <? /*bing*/ ?>
+
     <? wp_head() ?>
 
-    <link rel="shortcut icon" type="image/png" href="<? bloginfo('template_directory') ?>/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#222222>
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#0065cc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 
 </head>
@@ -56,56 +59,49 @@
 <header id="site-header" class="container">
     <div class="row">
         <div class="span4 header-left">
-            <? $site_logo = new Infoblock(4); ?>
             <div class="site-logo">
-                <? $site_logo_thumb = $site_logo->getThumbUrl();
-                if (!empty($site_logo_thumb)): ?>
                 <? if (!is_front_page() || is_paged()): ?>
-                <div class="site-logo__img">
-                    <a href="/"><img src="<?= $site_logo_thumb ?>"
-                                     alt="Решатель - консультации, решение задач, контрольные"></a>
+                    <a href="/" class="site-logo__img"></a>
                     <span style="display: none;" class="popmake-class"></span>
-                    <? else: ?>
-                    <div class="site-logo__img">
-                        <img src="<?= $site_logo_thumb ?>" alt="Решатель - консультации, решение задач, контрольные">
-                        <? endif ?>
+                <? else: ?>
+                    <div class="site-logo__img"></div>
+                <? endif ?>
+                <? $site_logo = new Infoblock(4); ?>
+                <noindex>
+                    <div class="site-logo__text">
+                        <?= $site_logo->title ?>
                     </div>
-                    <? endif ?>
-                    <noindex>
-                        <div class="site-logo__text">
-                            <?= $site_logo->title ?>
+                    <? if (!empty($site_logo->content)): ?>
+                        <div class="site-logo__slogan">
+                            <?= $site_logo->content ?>
                         </div>
-                        <? if (!empty($site_logo->content)): ?>
-                            <div class="site-logo__slogan">
-                                <?= $site_logo->content ?>
-                            </div>
-                        <? endif ?>
-                    </noindex>
-                </div>
+                    <? endif ?>
+                </noindex>
             </div>
-            <div class="span4 header-middle">
-                <? $phone = new Infoblock(9);
-                $social = new Infoblock(8354) ?>
-                <div class="header-contact">
-                    <div class="header-online">
-                        <?= $social->title ?>
-                    </div>
-                    <div class="header-social">
-                        <?= $social->content ?>
-                    </div>
+        </div>
+        <div class="span4 header-middle">
+            <? $phone = new Infoblock(9);
+            $social = new Infoblock(8354) ?>
+            <div class="header-contact">
+                <div class="header-online">
+                    <?= $social->title ?>
                 </div>
-            </div>
-            <div class="span4 header-right">
-                <div class="header-lk">
-                    <div class="lk-main">
-                        <div class="header-contact__phone"><?= $phone->title ?></div>
-                        <a class="lk-main__link" href="https://lk.reshatel.org" rel="nofollow"
-                           title="Перейти в личный кабинет клиента">Личный кабинет</a>
-                    </div>
-                    <div class="mobile-menu"></div>
+                <div class="header-social">
+                    <?= $social->content ?>
                 </div>
             </div>
         </div>
+        <div class="span4 header-right">
+            <div class="header-lk">
+                <div class="lk-main">
+                    <div class="header-contact__phone"><?= $phone->title ?></div>
+                    <a class="lk-main__link" href="https://lk.reshatel.org" rel="nofollow"
+                       title="Перейти в личный кабинет клиента">Личный кабинет</a>
+                </div>
+                <div class="mobile-menu"></div>
+            </div>
+        </div>
+    </div>
 </header>
 
 <div id="main-menu" class="container" style="margin-top: 5px; margin-bottom: 30px;">

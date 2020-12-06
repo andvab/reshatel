@@ -57,6 +57,7 @@
 
     /*header*/
     #site-header{
+        height: 50px;
         margin-top: 0;
         min-height: inherit;
         border-bottom: 1px dashed #808080;
@@ -69,10 +70,9 @@
     #site-header .site-logo__slogan{
         display: none;
     }
-    #site-header .site-logo__img img{
+    #site-header .site-logo__img{
         width: 45px;
-        height: 45px;
-        object-fit: contain;
+        height: 46px;
     }
     #site-header .site-logo__text{
         font-size: 23px;
