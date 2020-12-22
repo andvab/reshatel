@@ -22,17 +22,9 @@ function so_enqueues() {
     wp_register_style('so-recient-orders', $template_uri . '/css/recient-orders.css', false, '1.0.0', null);
     wp_enqueue_style('so-recient-orders');
 
-    if (!is_admin()) {
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', '/wp-includes/js/jquery/jquery.js', false, '1.12.4', true);
-        wp_enqueue_script('jquery');
-
-//        wp_register_style('hg-font-OpenSans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic-ext', false, '0.1', null);
-        wp_register_style('hg-font-OpenSans', 'https://fonts.googleapis.com/css?family=PT+Sans:400,700|Open+Sans:400,700&display=swap&subset=cyrillic-ext', false, '0.2', null);
-        wp_enqueue_style('hg-font-OpenSans');
-
-        wp_enqueue_style('dashicons');
-    }
+    wp_register_style('hg-font-OpenSans', 'https://fonts.googleapis.com/css?family=PT+Sans:400,700|Open+Sans:400,700&display=swap&subset=cyrillic-ext', false, '0.2', null);
+    wp_enqueue_style('hg-font-OpenSans');
+    wp_enqueue_style('dashicons');
 
     wp_register_script('so-jquery.mobile.custom.min-js', $template_uri . '/js/jquery.mobile.custom.min.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('so-jquery.mobile.custom.min-js');
@@ -40,7 +32,7 @@ function so_enqueues() {
     wp_register_script('so-jquery.touchSwipe.min-js', $template_uri . '/js/jquery.touchSwipe.min.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('so-jquery.touchSwipe.min-js');
 
-    wp_register_script('rv-readmore-js', '../../../plugins/reshatel-order-viewer/js/readmore.min.js', ['jquery'], '1.0.0', true);
+    wp_register_script('rv-readmore-js', $template_uri . '/../../plugins/reshatel-order-viewer/js/readmore.min.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('rv-readmore-js');
 
     wp_register_script('so-main-js', $template_uri . '/js/main.js', ['jquery', 'rv-readmore-js'], '1.0.0', true);

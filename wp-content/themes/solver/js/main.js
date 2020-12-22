@@ -59,6 +59,9 @@ jQuery(function ($) {
     $('.fc-form-2').on('submit', function () {
         yaCounter20837425.reachGoal('get-cost-landing');
     });
+    $('.laboratornaya').on('click', function () {
+        yaCounter20837425.reachGoal('laboratornaya');
+    });
 
 
     $("a[data-lightboxplus*=lightbox]").each(function () {
@@ -98,14 +101,14 @@ jQuery(function ($) {
         e.preventDefault();
     });
 
-    $('.show-more').readmore({
+    let $showMore = $('.show-more');
+    $showMore.selector = '.show-more';
+    $showMore.readmore({
         speed: 600,
         collapsedHeight: 0,
         moreLink: '<a href="#" class="show-more__link">&darr; Подробнее &darr;</a>',
         lessLink: '<a href="#" class="show-more__link">&uarr; Скрыть &uarr;</a>'
-    });
-    
-//    $(document).ready(promo);
+    }, '.show-more');
 });
 
 

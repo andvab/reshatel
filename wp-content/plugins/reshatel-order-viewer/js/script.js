@@ -1,12 +1,15 @@
 (function ($) {
-    $('.rv-order-desctiprion .rv-info-value').readmore({
+    let $description = $('.rv-order-desctiprion .rv-info-value');
+    $description.selector = '.rv-order-desctiprion .rv-info-value';
+    $description.readmore({
         speed: 350,
         collapsedHeight: 84,
         moreLink: '<a href="#">Показать полностью</a>',
         lessLink: '<a href="#">Скрыть</a>'
     });
 
-    var fileMore = $('.rv-file__readmore');
+    let fileMore = $('.rv-file__readmore');
+    fileMore.selector = '.rv-file__readmore';
     if (fileMore) {
         fileMore.readmore({
             speed: 350,

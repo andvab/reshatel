@@ -60,7 +60,8 @@ class EmailChecker
                 'yamdex.ru',
                 'yamdez.ru',
                 'yandec.ru',
-                'yanndex.ru'
+                'yanndex.ru',
+                'ynadex.ru'
             ],
             'mail.ru' => [
                 'maii.ru',
@@ -75,7 +76,8 @@ class EmailChecker
                 'amil.ru',
                 'msil.ru',
                 'nail.ru',
-                'mil.ru'
+                'mil.ru',
+                'manil.ru'
             ],
             'inbox.ru' => [
                 'indox.ru',

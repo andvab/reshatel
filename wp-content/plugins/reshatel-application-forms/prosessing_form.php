@@ -28,7 +28,7 @@ function re_processing_form() {
         re_output_data_result_for_user(NULL, ['error' => 'Ошибка! Пожалуйста, обратитесь к менеджеру по телефону.'], false);
     }
 
-    $error_fileds = false;
+    $error_fields = false;
 
     if (isset($_GET['re_action_form'])) {
         $action_form = re_form_check($_GET['re_action_form'], 'action_form');
@@ -42,15 +42,15 @@ function re_processing_form() {
             $name = re_form_check($_POST[$re_data['form']['name_fields']['name']], 'name');
             $tel = re_form_check($_POST[$re_data['form']['name_fields']['tel']], 'tel');
 
+            $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
+            $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
+            $files = re_form_check($_POST['files'], 'id_files'); // Возвращает уже ссылки на существующие файлы
+
             switch ($action_form) {
                 case 'online-pomoshh':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $duration = re_form_check($_POST[$re_data['form']['name_fields']['duration']], 'other_input_text');
                     $date_and_time = re_form_check($_POST[$re_data['form']['name_fields']['date_and_time']], 'date_and_time');
                     $number_task = re_form_check($_POST[$re_data['form']['name_fields']['number_task']], 'other_input_text');
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $subject && $duration && $number_task && $date_and_time['date'] && $date_and_time['time']) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -66,20 +66,13 @@ function re_processing_form() {
                             'time_start' => $date_and_time['time'],
                             'tests_count' => $number_task,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'reshenie-zadach':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -92,20 +85,13 @@ function re_processing_form() {
                             'subject' => $subject,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'kontrolnye-raboty':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -118,16 +104,12 @@ function re_processing_form() {
                             'subject' => $subject,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'kursovye-raboty':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
@@ -135,10 +117,6 @@ function re_processing_form() {
                     $number_end = (int) $_POST[$re_data['form']['name_fields']['number_end']];
                     $unical_procent = (int) $_POST[$re_data['form']['name_fields']['unical_procent']];
                     $site_unical = re_form_check($_POST[$re_data['form']['name_fields']['site_unical']], 'other_input_text');
-
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -155,16 +133,12 @@ function re_processing_form() {
                             'unique_tester' => $site_unical,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'diploms':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
@@ -172,10 +146,6 @@ function re_processing_form() {
                     $number_end = (int) $_POST[$re_data['form']['name_fields']['number_end']];
                     $unical_procent = (int) $_POST[$re_data['form']['name_fields']['unical_procent']];
                     $site_unical = re_form_check($_POST[$re_data['form']['name_fields']['site_unical']], 'other_input_text');
-
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -192,16 +162,12 @@ function re_processing_form() {
                             'unique_tester' => $site_unical,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'referats':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
@@ -209,10 +175,6 @@ function re_processing_form() {
                     $number_end = (int) $_POST[$re_data['form']['name_fields']['number_end']];
                     $unical_procent = (int) $_POST[$re_data['form']['name_fields']['unical_procent']];
                     $site_unical = re_form_check($_POST[$re_data['form']['name_fields']['site_unical']], 'other_input_text');
-
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -229,16 +191,12 @@ function re_processing_form() {
                             'unique_tester' => $site_unical,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'essay':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
@@ -246,10 +204,6 @@ function re_processing_form() {
                     $number_end = (int) $_POST[$re_data['form']['name_fields']['number_end']];
                     $unical_procent = (int) $_POST[$re_data['form']['name_fields']['unical_procent']];
                     $site_unical = re_form_check($_POST[$re_data['form']['name_fields']['site_unical']], 'other_input_text');
-
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -266,16 +220,12 @@ function re_processing_form() {
                             'unique_tester' => $site_unical,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'otchety-po-praktike':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
@@ -283,10 +233,6 @@ function re_processing_form() {
                     $number_end = (int) $_POST[$re_data['form']['name_fields']['number_end']];
                     $unical_procent = (int) $_POST[$re_data['form']['name_fields']['unical_procent']];
                     $site_unical = re_form_check($_POST[$re_data['form']['name_fields']['site_unical']], 'other_input_text');
-
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -303,25 +249,17 @@ function re_processing_form() {
                             'unique_tester' => $site_unical,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'presentations':
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
                     $number_start = (int) $_POST[$re_data['form']['name_fields']['number_start']];
                     $number_end = (int) $_POST[$re_data['form']['name_fields']['number_end']];
-
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $subject) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -336,24 +274,15 @@ function re_processing_form() {
                             'pages_end' => $number_end,
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'choose_type':
                     $type_form = (int) $_POST[$re_data['form']['name_fields']['select_type']];
                     $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
 
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
-
-
-                    $subject = re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text');
                     $duration = re_form_check($_POST[$re_data['form']['name_fields']['duration']], 'other_input_text');
                     if ($duration) {
                         $data_send_json['duration'] = $duration;
@@ -408,6 +337,8 @@ function re_processing_form() {
                         $data_send_json['name'] = 'Отчет по практике.' . ' ' . $title;
                     } elseif ($type_form == 9) {
                         $data_send_json['name'] = 'Презентация.' . ' ' . $title;
+                    } elseif ($type_form == 13) {
+                        $data_send_json['name'] = 'Лабораторная.' . ' ' . $title;
                     } else {
                         $data_send_json['name'] = $title;
                     }
@@ -421,20 +352,14 @@ function re_processing_form() {
                             'comments' => $comment,
                             'subject' => $subject,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
                     break;
                 case 'perevody':
-                    $translate_direction = explode('*', re_form_check($_POST[$re_data['form']['name_fields']['subject']], 'other_input_text'), 2);
+                    $translate_direction = explode('*', $subject, 2);
                     $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
-                    $comment = re_form_check($_POST[$re_data['form']['name_fields']['comment']], 'text');
-                    // Возвращает уже ссылки на существующие файлы
-                    $files = re_form_check($_POST['files'], 'id_files');
 
                     if ($name && $email && $date && $translate_direction) {
                         $data_send_json = array_merge($data_send_json, array(
@@ -447,15 +372,37 @@ function re_processing_form() {
                             'translate_direction' => $translate_direction[0],
                             'date2' => $date,
                                 ), $files['post']);
-
-                        $result = re_send_data_server($data_send_json, $files);
                     } else {
-                        $error_fileds = true;
+                        $error_fields = true;
                     }
 
-                    re_output_data_result_for_user($action_form, $result, $error_fileds);
+                    break;
+                case 'laboratornye':
+                    $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
+
+                    if ($name && $email && $date && $subject) {
+                        $data_send_json = array_merge($data_send_json, array(
+                            'type' => 13,
+                            'user_name' => $name,
+                            'user_email' => $email,
+                            'user_phone' => $tel,
+                            'comments' => $comment,
+                            'name' => 'Лабораторная.' . ' ' . $subject,
+                            'subject' => $subject,
+                            'date2' => $date,
+                        ), $files['post']);
+                    } else {
+                        $error_fields = true;
+                    }
                     break;
             }
+
+            if (!$error_fields) {
+                $result = re_send_data_server($data_send_json, $files);
+            } else {
+                $result = '';
+            }
+            re_output_data_result_for_user($action_form, $result, $error_fields);
         }
     }
 }

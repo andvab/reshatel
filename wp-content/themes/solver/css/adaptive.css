@@ -7,6 +7,10 @@
     display: none;
 }
 
+.ui-loader {
+    display: none !important;
+}
+
 @media screen and (max-width: 959px){
     .only-mobile {
         display: block;
