@@ -78,7 +78,8 @@ class EmailChecker
                 'msil.ru',
                 'nail.ru',
                 'mil.ru',
-                'manil.ru'
+                'manil.ru',
+                'mailr.ru'
             ],
             'inbox.ru' => [
                 'indox.ru',

@@ -23,7 +23,6 @@
                 if (have_rows('top_part')):
                     while (have_rows('top_part')) : the_row();
                         ?>
-
                         <div class="top-block span3">
                             <figure>
                                 <img src="<?php the_sub_field('top_image'); ?>" alt="icon" >
@@ -35,9 +34,6 @@
                                 </noindex>
                             </div>
                         </div>
-
-
-
                     <?php endwhile; ?>
 
                 <?php endif; ?>
@@ -107,13 +103,10 @@
         </noindex>
     </div>
 
+    <? if (have_rows('how_prob')): ?>
     <div class="general-prob container">
         <div class="general-title">Примеры лабораторных по предметам</div>
-        <?php
-        if (have_rows('how_prob')):
-            while (have_rows('how_prob')) : the_row();
-                ?>
-
+            <? while (have_rows('how_prob')) : the_row(); ?>
                 <a class="prob-block" href="<?php the_sub_field('prob_link'); ?>">
                     <figure style="background-image: url(<?php the_sub_field('prob_image'); ?>);"></figure>
 
@@ -121,11 +114,9 @@
                         <?php the_sub_field('prob_text'); ?>
                     </div>
                 </a>
-
             <?php endwhile; ?>
-
-        <?php endif; ?>
-    </div> 
+    </div>
+    <? endif; ?>
 
     <div class="last-orders container">
         <noindex>
