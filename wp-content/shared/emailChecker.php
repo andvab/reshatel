@@ -41,7 +41,8 @@ class EmailChecker
                 'gmal.com',
                 'gmai.com',
                 'jmail.com',
-                'gmsil.com'
+                'gmsil.com',
+                'gmailc.сom'
             ],
             'yandex.ru' => [
                 'yndex.ru',
@@ -101,6 +102,7 @@ class EmailChecker
             ],
             'icloud.com' => [
                 'icloud.ru',
+                'icould.com',
                 'cloud.com',
                 'iclaud.com',
                 'ocloud.com',
@@ -113,7 +115,7 @@ class EmailChecker
         ];
         $this->zones = [
             'ru' => ['ry', 'ri', 'rj', 'rh', 'tu', 'eu'],
-            'com' => ['co', 'con', 'vom']
+            'com' => ['co', 'con', 'vom', 'om']
         ];
 
     }

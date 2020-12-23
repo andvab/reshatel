@@ -395,6 +395,35 @@ function re_processing_form() {
                         $error_fields = true;
                     }
                     break;
+                case 'statya':
+                    $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
+
+                    $title = re_form_check($_POST[$re_data['form']['name_fields']['title']], 'other_input_text');
+                    $number_start = (int) $_POST[$re_data['form']['name_fields']['number_start']];
+                    $number_end = (int) $_POST[$re_data['form']['name_fields']['number_end']];
+                    $unical_procent = (int) $_POST[$re_data['form']['name_fields']['unical_procent']];
+                    $site_unical = re_form_check($_POST[$re_data['form']['name_fields']['site_unical']], 'other_input_text');
+
+                    if ($name && $email && $date && $subject) {
+                        $data_send_json = array_merge($data_send_json, array(
+                            'type' => 14,
+                            'user_name' => $name,
+                            'user_email' => $email,
+                            'user_phone' => $tel,
+                            'comments' => $comment,
+                            'name' => 'Статья. ' . $title,
+                            'subject' => $subject,
+                            'pages_start' => $number_start,
+                            'pages_end' => $number_end,
+                            'unique_persent' => $unical_procent,
+                            'unique_tester' => $site_unical,
+                            'date2' => $date,
+                        ), $files['post']);
+                    } else {
+                        $error_fields = true;
+                    }
+
+                    break;
             }
 
             if (!$error_fields) {

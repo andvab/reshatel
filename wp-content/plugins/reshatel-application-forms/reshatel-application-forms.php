@@ -139,6 +139,7 @@ function re_shortcode_form($atts) {
         'category',
         'perevody',
         'laboratornye',
+        'statya',
         'choose_type');
 
     if (isset($atts['name']) && in_array($atts['name'], $list_files)) {

@@ -158,4 +158,4 @@ function filter_aioseop_canonical_category($url) {
     return is_category() ? str_replace('/category', '', $url) : $url;
 }
 
-add_filter('aioseop_canonical_url', 'filter_aioseop_canonical_category', 10, 1);
+add_filter('aioseo_canonical_url', 'filter_aioseop_canonical_category', 10, 1);
