@@ -211,14 +211,15 @@
         "offers": {
             "@type": "Offer",
             "priceCurrency": "RUB",
-            "price": "<?= $order->price?:190 ?>"
+            "price": "<?= $order->price ?: 190 ?>",
+            "availability": "https://schema.org/InStock"
         },
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "<?= round(5 - (int)$argv[1] / (int)pow(10, (int)strlen($argv[1])) * 0.7, 1) ?>",
+            "ratingValue": "<?= round(5 - (int)$order->price / (int)pow(10, (int)strlen($order->price)) * 0.7, 1) ?>",
             "bestRating": "5",
             "worstRating": "1",
-            "ratingCount": "<?= ceil($order->price/100+1) ?>"
+            "ratingCount": "<?= ceil($order->price / 100 + 1) ?>"
         }
     }
 </script>
