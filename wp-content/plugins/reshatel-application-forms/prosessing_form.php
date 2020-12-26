@@ -422,7 +422,24 @@ function re_processing_form() {
                     } else {
                         $error_fields = true;
                     }
+                    break;
+                case 'drawing':
+                    $date = re_form_check($_POST[$re_data['form']['name_fields']['date']], 'date');
 
+                    if ($name && $email && $date && $subject) {
+                        $data_send_json = array_merge($data_send_json, array(
+                            'type' => 15,
+                            'user_name' => $name,
+                            'user_email' => $email,
+                            'user_phone' => $tel,
+                            'comments' => $comment,
+                            'name' => 'Чертеж.' . ' ' . $subject,
+                            'subject' => $subject,
+                            'date2' => $date,
+                        ), $files['post']);
+                    } else {
+                        $error_fields = true;
+                    }
                     break;
             }
 

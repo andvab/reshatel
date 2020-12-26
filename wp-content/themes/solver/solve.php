@@ -189,6 +189,29 @@
 
 </div>
 
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Решение задач",
+        "image": "https://reshatel.org/wp-content/uploads/2013/03/logo.png",
+        "description": "Помощь студентам с решением задач по всем предметам. Низкие цены!",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://reshatel.org/reshenie-zadach/",
+            "priceCurrency": "RUB",
+            "price": "190"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "189"
+        }
+    }
+</script>
+
 <?php get_footer(); ?>
 
 
