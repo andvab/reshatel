@@ -178,4 +178,27 @@
 
 </div>
 
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Лабораторная работа",
+        "image": "https://reshatel.org/wp-content/themes/solver/img/logo_markup.png",
+        "description": "Помощь студентам с лабораторными по всем направлениям. Низкие цены!",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://reshatel.org/laboratornye-raboty/",
+            "priceCurrency": "RUB",
+            "price": "590"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.85",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "21"
+        }
+    }
+</script>
+
 <?php get_footer(); ?>

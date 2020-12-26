@@ -187,6 +187,28 @@
 
 </div>
 
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Курсовая работа",
+        "image": "https://reshatel.org/wp-content/themes/solver/img/logo_markup.png",
+        "description": "Помощь студентам с курсовыми по всем предметам. Низкие цены!",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://reshatel.org/kursovye-raboty/",
+            "priceCurrency": "RUB",
+            "price": "1000"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "59"
+        }
+    }
+</script>
+
 <?php get_footer(); ?>
-<!--/ Solve Infographics -->
 

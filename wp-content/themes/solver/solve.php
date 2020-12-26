@@ -194,7 +194,7 @@
         "@context": "https://schema.org/",
         "@type": "Product",
         "name": "Решение задач",
-        "image": "https://reshatel.org/wp-content/uploads/2013/03/logo.png",
+        "image": "https://reshatel.org/wp-content/themes/solver/img/logo_markup.png",
         "description": "Помощь студентам с решением задач по всем предметам. Низкие цены!",
         "offers": {
             "@type": "Offer",
