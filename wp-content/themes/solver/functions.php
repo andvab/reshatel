@@ -159,3 +159,5 @@ function filter_aioseop_canonical_category($url) {
 }
 
 add_filter('aioseo_canonical_url', 'filter_aioseop_canonical_category', 10, 1);
+
+add_theme_support('title-tag');
