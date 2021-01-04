@@ -584,6 +584,9 @@
     .vacancy-form {
         width: 96%;
     }
+    .services {
+        display: block;
+    }
 
 } @media screen and (max-width: 640px){
     #main-content .span4,

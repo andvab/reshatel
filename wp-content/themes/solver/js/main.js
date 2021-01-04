@@ -71,6 +71,9 @@ jQuery(function ($) {
         yaCounter20837425.reachGoal('statya');
         ga('send', 'event', 'form', 'statya');
     });
+    $('.drawing').on('click', function () {
+        yaCounter20837425.reachGoal('drawing');
+    });
 
 
     $("a[data-lightboxplus*=lightbox]").each(function () {

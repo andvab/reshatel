@@ -1800,42 +1800,47 @@ a.pluso-more {
     height: auto;
 }
 
+.services {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #breadcrumb {
-    display: block;
-    float: none;
-    padding-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: 2px solid #f2f2f2;
-    border-top: 2px solid #f2f2f2;
-    background: #ffffff;
+display: block;
+float: none;
+padding-bottom: 10px;
+margin-top: 0;
+margin-bottom: 10px;
+padding-top: 10px;
+border-bottom: 2px solid #f2f2f2;
+border-top: 2px solid #f2f2f2;
+background: #ffffff;
 }
 
 .crumbs {
-    font-size: 13px;
+font-size: 13px;
 }
 
 .rubl {
-    font-family: 'PT Sans', sans-serif;
+font-family: 'PT Sans', sans-serif;
 }
 
 @keyframes promo {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.96);
-    }
-    100% {
-        transform: scale(1);
-    }
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(0.96);
+}
+100% {
+    transform: scale(1);
+}
 }
 
 .popmake-covid {
-    animation: promo 3s ease-in-out 1s 3 alternate;
+animation: promo 3s ease-in-out 1s 3 alternate;
 }
 
 .grecaptcha-badge {
-    display: none !important;
+display: none !important;
 }

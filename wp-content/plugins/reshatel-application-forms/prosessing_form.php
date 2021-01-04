@@ -320,25 +320,25 @@ function re_processing_form() {
                     }
 
                     if ($type_form == 1) {
-                        $data_send_json['name'] = 'Контрольная.' . ' ' . $title;
+                        $data_send_json['name'] = 'Контрольная. ' . $title;
                     } elseif ($type_form == 2) {
-                        $data_send_json['name'] = 'Решение задач.' . ' ' . $title;
+                        $data_send_json['name'] = 'Решение задач. ' . $title;
                     } elseif ($type_form == 3) {
-                        $data_send_json['name'] = 'Курсовая.' . ' ' . $title;
+                        $data_send_json['name'] = 'Курсовая. ' . $title;
                     } elseif ($type_form == 4) {
-                        $data_send_json['name'] = 'Диплом.' . ' ' . $title;
+                        $data_send_json['name'] = 'Диплом. ' . $title;
                     } elseif ($type_form == 5) {
-                        $data_send_json['name'] = 'Реферат.' . ' ' . $title;
+                        $data_send_json['name'] = 'Реферат. ' . $title;
                     } elseif ($type_form == 6) {
-                        $data_send_json['name'] = 'Онлайн помощь.' . ' ' . $title;
+                        $data_send_json['name'] = 'Онлайн помощь. ' . $title;
                     } elseif ($type_form == 10) {
-                        $data_send_json['name'] = 'Эссе.' . ' ' . $title;
+                        $data_send_json['name'] = 'Эссе. ' . $title;
                     } elseif ($type_form == 11) {
-                        $data_send_json['name'] = 'Отчет по практике.' . ' ' . $title;
+                        $data_send_json['name'] = 'Отчет по практике. ' . $title;
                     } elseif ($type_form == 9) {
-                        $data_send_json['name'] = 'Презентация.' . ' ' . $title;
+                        $data_send_json['name'] = 'Презентация. ' . $title;
                     } elseif ($type_form == 13) {
-                        $data_send_json['name'] = 'Лабораторная.' . ' ' . $title;
+                        $data_send_json['name'] = 'Лабораторная. ' . $title;
                     } else {
                         $data_send_json['name'] = $title;
                     }
@@ -387,7 +387,7 @@ function re_processing_form() {
                             'user_email' => $email,
                             'user_phone' => $tel,
                             'comments' => $comment,
-                            'name' => 'Лабораторная.' . ' ' . $subject,
+                            'name' => 'Лабораторная. ' . $subject,
                             'subject' => $subject,
                             'date2' => $date,
                         ), $files['post']);
@@ -433,7 +433,7 @@ function re_processing_form() {
                             'user_email' => $email,
                             'user_phone' => $tel,
                             'comments' => $comment,
-                            'name' => 'Чертеж.' . ' ' . $subject,
+                            'name' => 'Чертеж. ' . $subject,
                             'subject' => $subject,
                             'date2' => $date,
                         ), $files['post']);
