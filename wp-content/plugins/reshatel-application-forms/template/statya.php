@@ -68,7 +68,7 @@ if (isset($_GET['subject'])) {
                     <div class="form-box__str exp">
                         <label class="form-box__str__label">Пояснения</label>
                         <span class="wpcf7-form-control-wrap comment">
-                            <textarea name="<?php echo $re_data['form']['name_fields']['comment']; ?>" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea form-box__str__textarea" aria-invalid="false" placeholder="Тема работы, вариант, план и т.п." onblur="this.style.height = '100px'"></textarea>
+                            <textarea name="<?php echo $re_data['form']['name_fields']['comment']; ?>" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea form-box__str__textarea" aria-invalid="false" placeholder="Опишите подробнее требования для вашей статьи здесь..." onblur="this.style.height = '100px'"></textarea>
                         </span>
                     </div>
 
