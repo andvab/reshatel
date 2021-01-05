@@ -187,5 +187,28 @@
 
 </div>
 
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Помощь с дипломной работой",
+        "image": "https://reshatel.org/wp-content/themes/solver/img/logo_markup.png",
+        "description": "Помощь студентам с дипломными по всем направлениям. Низкие цены!",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://reshatel.org/diploms/",
+            "priceCurrency": "RUB",
+            "price": "5990"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "112"
+        }
+    }
+</script>
+
 <?php get_footer(); ?>
 

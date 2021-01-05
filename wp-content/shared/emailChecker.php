@@ -41,7 +41,8 @@ class EmailChecker
                 'gmal.com',
                 'gmai.com',
                 'jmail.com',
-                'gmsil.com'
+                'gmsil.com',
+                'gmailc.сom'
             ],
             'yandex.ru' => [
                 'yndex.ru',
@@ -60,7 +61,8 @@ class EmailChecker
                 'yamdex.ru',
                 'yamdez.ru',
                 'yandec.ru',
-                'yanndex.ru'
+                'yanndex.ru',
+                'ynadex.ru'
             ],
             'mail.ru' => [
                 'maii.ru',
@@ -75,7 +77,9 @@ class EmailChecker
                 'amil.ru',
                 'msil.ru',
                 'nail.ru',
-                'mil.ru'
+                'mil.ru',
+                'manil.ru',
+                'mailr.ru'
             ],
             'inbox.ru' => [
                 'indox.ru',
@@ -99,6 +103,7 @@ class EmailChecker
             ],
             'icloud.com' => [
                 'icloud.ru',
+                'icould.com',
                 'cloud.com',
                 'iclaud.com',
                 'ocloud.com',
@@ -111,7 +116,7 @@ class EmailChecker
         ];
         $this->zones = [
             'ru' => ['ry', 'ri', 'rj', 'rh', 'tu', 'eu'],
-            'com' => ['co', 'con', 'vom']
+            'com' => ['co', 'con', 'vom', 'om']
         ];
 
     }

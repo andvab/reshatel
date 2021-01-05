@@ -12,7 +12,7 @@
 
 
 <div class="main-services">
-    <div class="container">
+    <div class="container services">
         <?
         if (have_rows('services')):
             while (have_rows('services')) : the_row();

@@ -71,6 +71,9 @@
                             <option value="10" data-type="2" <?php echo ( get_query_var('category_name') == 'essay' ) ? 'selected' : ''; ?>>Эссе</option>
                             <option value="11" data-type="2" <?php echo ( get_query_var('category_name') == 'otchety-po-praktike' ) ? 'selected' : ''; ?>>Отчет по практике</option>
                             <option value="9" data-type="4" <?php echo ( get_query_var('category_name') == 'presentations' ) ? 'selected' : ''; ?>>Презентация</option>
+                            <option value="13" data-type="1">Лабораторная работа</option>
+                            <option value="14" data-type="2">Статья</option>
+                            <option value="15" data-type="1">Чертёж</option>
                             <option value="6" data-type="3" <?php echo ( get_query_var('category_name') == 'online-pomosh' ) ? 'selected' : ''; ?>>Онлайн помощь</option>
                         </select>
                     </span>

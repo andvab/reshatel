@@ -7,6 +7,10 @@
     display: none;
 }
 
+.ui-loader {
+    display: none !important;
+}
+
 @media screen and (max-width: 959px){
     .only-mobile {
         display: block;
@@ -579,6 +583,9 @@
     }
     .vacancy-form {
         width: 96%;
+    }
+    .services {
+        display: block;
     }
 
 } @media screen and (max-width: 640px){

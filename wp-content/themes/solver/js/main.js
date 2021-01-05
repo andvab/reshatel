@@ -49,15 +49,30 @@ jQuery(function ($) {
     });
     $('.mc-lk-order').on('click', function () {
         yaCounter20837425.reachGoal('lk-price');
+        ga('send', 'event', 'button', 'lk-price');
     });
     $('.job').on('click', function () {
         yaCounter20837425.reachGoal('vakansiya');
+        ga('send', 'event', 'other', 'vakansiya');
     });
     $('.fc-form-1').on('submit', function () {
         yaCounter20837425.reachGoal('get-cost');
+        ga('send', 'event', 'form', 'get-cost');
     });
     $('.fc-form-2').on('submit', function () {
         yaCounter20837425.reachGoal('get-cost-landing');
+        ga('send', 'event', 'form', 'get-cost-landing');
+    });
+    $('.laboratornaya').on('click', function () {
+        yaCounter20837425.reachGoal('laboratornaya');
+        ga('send', 'event', 'form', 'laboratornaya');
+    });
+    $('.statya').on('click', function () {
+        yaCounter20837425.reachGoal('statya');
+        ga('send', 'event', 'form', 'statya');
+    });
+    $('.drawing').on('click', function () {
+        yaCounter20837425.reachGoal('drawing');
     });
 
 
@@ -98,14 +113,14 @@ jQuery(function ($) {
         e.preventDefault();
     });
 
-    $('.show-more').readmore({
+    let $showMore = $('.show-more');
+    $showMore.selector = '.show-more';
+    $showMore.readmore({
         speed: 600,
         collapsedHeight: 0,
         moreLink: '<a href="#" class="show-more__link">&darr; Подробнее &darr;</a>',
         lessLink: '<a href="#" class="show-more__link">&uarr; Скрыть &uarr;</a>'
-    });
-    
-//    $(document).ready(promo);
+    }, '.show-more');
 });
 
 

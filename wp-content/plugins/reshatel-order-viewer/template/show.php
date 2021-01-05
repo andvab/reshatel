@@ -200,3 +200,26 @@
         <div class="owl-carousel owl-theme lo-container" data-type="<?= $order->type_id ?>" data-cat="<?= $order->category_id ?>"></div>
     </noindex>
 </div>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "<?= $order->name ?>",
+        "image": "https://reshatel.org/wp-content/themes/solver/img/logo_markup.png",
+        "description": "Заказ <?= $order->name ?>",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "RUB",
+            "price": "<?= $order->price ?: 190 ?>",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "<?= round(5 - (int)$order->price / (int)pow(10, (int)strlen($order->price)) * 0.7, 1) ?>",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "<?= ceil($order->price / 100 + 1) ?>"
+        }
+    }
+</script>

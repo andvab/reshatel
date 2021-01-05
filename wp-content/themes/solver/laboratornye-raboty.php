@@ -1,6 +1,6 @@
 <?
 /**
- * Template Name: Решение задач
+ * Template Name: Лабораторные работы
  *
  * @package WordPress
  * @subpackage Solver
@@ -12,8 +12,8 @@
 <div id="article" class="container" style="margin-top:20px">
     <div class="row">
         <div class="span12">
-            <h1 class="article__title"><? the_title() ?></h1>       
-        </div>    
+            <h1 class="article__title"><? the_title() ?></h1>				
+        </div>		
     </div>
 
     <div class="general-top row">
@@ -23,7 +23,6 @@
                 if (have_rows('top_part')):
                     while (have_rows('top_part')) : the_row();
                         ?>
-
                         <div class="top-block span3">
                             <figure>
                                 <img src="<?php the_sub_field('top_image'); ?>" alt="icon" >
@@ -35,29 +34,26 @@
                                 </noindex>
                             </div>
                         </div>
-
-
-
                     <?php endwhile; ?>
 
                 <?php endif; ?>
             </div>
-        </div>       
+        </div>
         <ul class="caption">
             <li class="caption-1">1</li>
             <li class="caption-2">2</li>
             <li class="caption-3">3</li>
-        </ul>         
+        </ul>              
     </div>
 
     <div class="general-form container">
         <noindex>
-            <?= do_shortcode('[reshatel_form name=reshenie-zadach]'); ?>
+            <?= do_shortcode('[reshatel_form name=laboratornye]'); ?>
         </noindex>
     </div>
 
     <div class="general-how-much container">
-        <div class="general-title">сколько стоит решение задач?</div>
+        <div class="general-title">сколько стоит лабораторная работа?</div>
         <?php
         if (have_rows('how_part')):
             while (have_rows('how_part')) : the_row();
@@ -84,7 +80,7 @@
 
     <div class="general-take container">
         <noindex>
-            <div class="general-title">заказывай у нас !</div>
+            <div class="general-title">заказывай у нас!</div>
             <?php
             if (have_rows('us')):
                 while (have_rows('us')) : the_row();
@@ -107,44 +103,37 @@
         </noindex>
     </div>
 
+    <? if (have_rows('how_prob')): ?>
     <div class="general-prob container">
-        <div class="general-title">Решение задач по предметам</div>
-        <?php
-        if (have_rows('how_prob')):
-            while (have_rows('how_prob')) : the_row();
-                ?>
-
+        <div class="general-title">Примеры лабораторных по предметам</div>
+            <? while (have_rows('how_prob')) : the_row(); ?>
                 <a class="prob-block" href="<?php the_sub_field('prob_link'); ?>">
-                    <figure style="background-image: url(<?php the_sub_field('prob_image'); ?>);">
-                    </figure>
+                    <figure style="background-image: url(<?php the_sub_field('prob_image'); ?>);"></figure>
 
                     <div class="text-part">
-
                         <?php the_sub_field('prob_text'); ?>
                     </div>
                 </a>
-
             <?php endwhile; ?>
-
-        <?php endif; ?>
-    </div> 
+    </div>
+    <? endif; ?>
 
     <div class="last-orders container">
         <noindex>
             <div class="general-title">Последние работы</div>
-            <div class="owl-carousel owl-theme lo-container" data-type="2">
-                <div class="lo-load"></div>
+            <div class="lo-load"></div>
+            <div class="owl-carousel owl-theme lo-container" data-type="13">
             </div>
         </noindex>
     </div>
 
     <div class="general-middle container">
-        <div class="general-title">Помощь с решением задач</div>
+        <div class="general-title">Лабораторные работы</div>
         <div class="general-block">
             <?php the_field('mid'); ?>
         </div>
 
-    </div>  
+    </div> 	
 
     <div class="general-qa container">
         <noindex>
@@ -193,25 +182,23 @@
     {
         "@context": "https://schema.org/",
         "@type": "Product",
-        "name": "Решение задач",
+        "name": "Лабораторная работа",
         "image": "https://reshatel.org/wp-content/themes/solver/img/logo_markup.png",
-        "description": "Помощь студентам с решением задач по всем предметам. Низкие цены!",
+        "description": "Помощь студентам с лабораторными по всем направлениям. Низкие цены!",
         "offers": {
             "@type": "Offer",
-            "url": "https://reshatel.org/reshenie-zadach/",
+            "url": "https://reshatel.org/laboratornye-raboty/",
             "priceCurrency": "RUB",
-            "price": "190"
+            "price": "590"
         },
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.9",
+            "ratingValue": "4.85",
             "bestRating": "5",
             "worstRating": "1",
-            "ratingCount": "189"
+            "ratingCount": "21"
         }
     }
 </script>
 
 <?php get_footer(); ?>
-
-

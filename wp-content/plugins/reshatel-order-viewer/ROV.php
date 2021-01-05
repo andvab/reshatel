@@ -155,11 +155,17 @@ class ROV {
             return null;
         }
 
-        add_filter('wp_title', function() use($order) {
-            return ($order ? $order->name : 'Ошибка') . ' | ';
+//        add_filter('wp_title', function() use($order) {
+//            return ($order ? $order->name : 'Ошибка') . ' | ';
+//        });
+        add_filter('aioseo_title', function() use($order) {
+            return ($order ? $order->name . ' на заказ': 'Ошибка') . ' | Решатель';
         });
         add_action('wp_head', function() use($order) {
             echo '<meta name="description" content="' . "$order->name - $order->type по $order->cat_dat на заказ" . '" />';
+            if (iconv_strlen($order->comments) < 1000) {
+                echo '<meta name="robots" content="noindex, follow"/>';
+            }
         });
 
         $order->tester = $this->getOrderTesterName($order->unique_tester_id);
@@ -210,6 +216,11 @@ class ROV {
         $sql = $wpdb->prepare("SELECT f.name, f.url, f.date_loaded FROM $this->sqlFile f WHERE f.order_id = %d AND f.is_done = %d", $orderId, $isDone);
 
         return $wpdb->get_results($sql);
+    }
+
+    static public function test($parts) {
+        error_log('test');
+        return "TEST";
     }
 
     public function showOrder() {
