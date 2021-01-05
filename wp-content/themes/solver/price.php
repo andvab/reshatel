@@ -41,7 +41,7 @@
     </section>
 
     <section class="general-pay container">
-        <h2>Способы оплаты</h2>
+        <div class="general-title">Способы оплаты</div>
         <div class="general-pay-block">
             <? while (have_rows('pay')) : the_row(); ?>
                 <figure>
