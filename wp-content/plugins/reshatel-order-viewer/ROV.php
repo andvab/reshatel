@@ -302,7 +302,7 @@ class ROV {
             return false;
         }
 
-        $sql = "SELECT CONCAT('orders/',o.page_name,'/') path FROM wp_lk_order o LEFT JOIN wp_lk_type t ON o.type_id = t.id LEFT JOIN wp_lk_category c ON o.category_id = c.id ORDER BY o.id DESC LIMIT 49999";
+        $sql = "SELECT CONCAT('orders/',o.page_name,'/') path FROM wp_lk_order o LEFT JOIN wp_lk_type t ON o.type_id = t.id LEFT JOIN wp_lk_category c ON o.category_id = c.id ORDER BY o.id WHERE CHAR_LENGTH(o.comments) > 999 DESC LIMIT 49999";
         $urls = $wpdb->get_results($sql);
 
         $date = $wpdb->get_var('SELECT UNIX_TIMESTAMP(max(date_finished)) FROM wp_lk_order') ?: time();
