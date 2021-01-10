@@ -254,6 +254,10 @@ class ROV {
         $sections = $this->getSections();
         $categories = $selectedSection ? $this->getCategories($selectedSection) : null;
 
+        add_action('wp_head', function() {
+            echo '<link rel="canonical" href="https://reshatel.org/orders/">';
+        });
+
         ob_start();
         include __DIR__ . '/template/feed.php';
         return ob_get_clean();
