@@ -27,19 +27,18 @@ if (isset($_GET['subject'])) {
                 </div>
 
                 <div class="form-box__str">
-                    <label class="form-box__str__label">Количество заданий *</label>
-                    <span class="wpcf7-form-control-wrap quantity">
-                        <input type="text" name="<?php echo $re_data['form']['name_fields']['number_task']; ?>" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-box__str__i-text" required aria-required="true" aria-invalid="false">
-                    </span>
-                </div>
-
-                <div class="form-box__str">
                     <label class="form-box__str__label">Продолжительность *</label>
                     <span class="wpcf7-form-control-wrap duration">
                         <input type="text" name="<?php echo $re_data['form']['name_fields']['duration']; ?>" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-box__str__i-text" required aria-required="true" aria-invalid="false">
                     </span>
                 </div>
 
+                <div class="form-box__str">
+                    <label class="form-box__str__label">Количество заданий *</label>
+                    <span class="wpcf7-form-control-wrap quantity">
+                        <input type="text" name="<?php echo $re_data['form']['name_fields']['number_task']; ?>" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-box__str__i-text" required aria-required="true" aria-invalid="false">
+                    </span>
+                </div>
 
                 <div class="form-group no-files form-box__str">
                     <label class="form-box__str__label">Примерное задание</label>
