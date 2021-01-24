@@ -61,7 +61,7 @@ jQuery(function ($) {
     });
     $('.fc-form-2').on('submit', function () {
         yaCounter20837425.reachGoal('get-cost-landing');
-        ga('send', 'event', 'form', 'get-cost-landing');
+        //ga('send', 'event', 'form', 'get-cost-landing');
     });
     $('.laboratornaya').on('click', function () {
         yaCounter20837425.reachGoal('laboratornaya');

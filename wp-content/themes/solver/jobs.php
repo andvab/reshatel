@@ -10,6 +10,12 @@
 
 <? get_header() ?>
 
+<style>
+    .grecaptcha-badge {
+        display: block !important;
+    }
+</style>
+
 <div id="content" class="container" style="margin-top: 20px">
     <div class="row">
         <div class="span12">

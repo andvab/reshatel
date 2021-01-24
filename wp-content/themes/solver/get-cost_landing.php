@@ -25,10 +25,6 @@
     </div>
 </div>
 
-
-
-<?php wp_footer() ?>
-
 <!-- Yandex.Metrika counter-->
 <script type="text/javascript">
 (function (d, w, c) {
@@ -57,6 +53,8 @@ d.addEventListener("DOMContentLoaded", f, false);
 
 <noscript><div><img src="//mc.yandex.ru/watch/20837425" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+
+<?php wp_footer() ?>
 
 </body>
 </html>
