@@ -57,7 +57,7 @@
     </div>
 
     <div class="general-how-much container">
-        <div class="general-title">Сколько стоит ?</div>
+        <div class="general-title">Сколько стоит?</div>
         <?php
         if (have_rows('how_part')):
             while (have_rows('how_part')) : the_row();
@@ -84,7 +84,7 @@
 
     <div class="general-take container">
         <noindex>
-            <div class="general-title">заказывай у нас !</div>
+            <div class="general-title">заказывай у нас!</div>
             <?php
             if (have_rows('us')):
                 while (have_rows('us')) : the_row();
