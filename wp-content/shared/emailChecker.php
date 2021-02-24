@@ -3,11 +3,6 @@
 class EmailChecker
 {
     /**
-     * @var string[]
-     */
-    protected $gmail;
-
-    /**
      * @var string
      */
     protected $email;
@@ -15,110 +10,23 @@ class EmailChecker
      * @var string[][]
      */
     private $zones;
-    /**
-     * @var string[][]
-     */
-    private $services;
 
     public function __construct($email)
     {
         $this->email = $email;
-        $this->services = [
-            'gmail.com' => [
-                'gmail.ru',
-                'gamail.com',
-                'gvail.com',
-                'gail.com',
-                'gmal.com',
-                'gmaul.com',
-                'gmaol.com',
-                'qmail.com',
-                'bmail.com',
-                'hmail.com',
-                'gmeil.com',
-                'gmal.ru',
-                'gmai.ru',
-                'gmal.com',
-                'gmai.com',
-                'jmail.com',
-                'gmsil.com',
-                'gmailc.сom'
-            ],
-            'yandex.ru' => [
-                'yndex.ru',
-                'yande.ru',
-                'yanbex.ru',
-                'uandex.ru',
-                'yandex.ru.ru',
-                'yadex.ru',
-                'eandex.ru',
-                'iandex.ru',
-                'jandex.ru',
-                'yandekx.ru',
-                'yahdex.ru',
-                'yqndex.ru',
-                'yansex.ru',
-                'yamdex.ru',
-                'yamdez.ru',
-                'yandec.ru',
-                'yanndex.ru',
-                'ynadex.ru'
-            ],
-            'mail.ru' => [
-                'maii.ru',
-                'mael.ru',
-                'mail.ru.ru',
-                'meil.ru',
-                'maile.ru',
-                'maiil.ru',
-                'mial.ru',
-                'vail.ru',
-                'gail.ru',
-                'amil.ru',
-                'msil.ru',
-                'nail.ru',
-                'mil.ru',
-                'manil.ru',
-                'mailr.ru'
-            ],
-            'inbox.ru' => [
-                'indox.ru',
-                'invox.ru',
-                'ibnox.ru'
-            ],
-            'bk.ru' => [
-                'bj.ru',
-                'bl.ru',
-                'bi.ru'
-            ],
-            'rambler.ru' => [
-                'ramler.ru',
-                'ramble.ru',
-                'bambler.ru',
-                'ramrler.ru',
-                'rambker.ru',
-                'ramdler.ru',
-                'gambler.ru',
-                'rfmbler.ru'
-            ],
-            'icloud.com' => [
-                'icloud.ru',
-                'icould.com',
-                'cloud.com',
-                'iclaud.com',
-                'ocloud.com',
-                'ucloud.com',
-                'icloid.com',
-                'ikloud.com',
-                'iclous.com',
-                'iclouf.com'
-            ]
-        ];
         $this->zones = [
             'ru' => ['ry', 'ri', 'rj', 'rh', 'tu', 'eu'],
             'com' => ['co', 'con', 'vom', 'om']
         ];
+    }
 
+    private function convertDomain($domain)
+    {
+        global $wpdb;
+
+        $sql = $wpdb->prepare('SELECT c.name FROM wp_domain_variation v JOIN wp_domain_correct c ON v.correct_id = c.id WHERE v.name = %s LIMIT 1', $domain);
+        $res = $wpdb->get_col($sql);
+        return !empty($res) ? $res[0] : $domain;
     }
 
     public function check()
@@ -146,30 +54,30 @@ class EmailChecker
             return false;
         }
 
-        foreach ($this->services as $service => $test) {
-            if (in_array($domain, $test)) {
-                return "{$username}@{$service}";
-            }
-        }
-
-        return false;
+        return "{$username}@{$this->convertDomain($domain)}";
     }
 
     public function tryFix()
     {
         $before = $this->email;
-        $res = $this->check() ?: $this->email;
-        error_log(date("d.m.Y H:i:s") . ': ' . $before . '  ---->  ' . $res . PHP_EOL, 3, __DIR__.'/email-checker.log');
+        $res = $this->check();
+        error_log(date("d.m.Y H:i:s") . ': ' . $before . '  ---->  ' . $res . PHP_EOL, 3, __DIR__ . '/email-checker.log');
         return $res;
     }
 
     public static function isLooksCorrect($email)
     {
-        $pattern = "/(@mail.ru)|(@inbox.ru)|(@mail.ua)|(@bk.ru)|(@list.ru)|(yandex.ru)|(@ya.ru)|(yandex.com)|".
-            "(@yandex.kz)|(@yandex.ua)|(@yandex.by)|(@narod.ru)|(@gmail.com)|(@yahoo.com)|(@yahoo.fr)|(rocketmail.com)|".
-            "(@rambler.ru)|(ro.ru)|(@icloud.com)|(@reshatel.org)|(@ukr.net)|(@hotmail.com)|(@ngs.ru)|(@tut.by)|".
-            "(@outlook.com)|(@me.com)|(@sibmail.com)|(@i.ua)|(@inbox.lv)|(@meta.ua)|(qq.com)|(@my.com)|(@edu.hse.ru)|".
-            "(@live.ru)|(@bigmir.net)|(@lenta.ru)|(@e1.ru)|(@protonmail.com)|(@qip.ru)|(phystech.edu)|(@pfur.ru)/";
-        return preg_match($pattern, $email);
+        global $wpdb;
+
+        try {
+            $parts = explode('@', $email);
+            if (count($parts) === 2) {
+                $sql = $wpdb->prepare("SELECT id FROM `wp_domain_correct` WHERE `name` = %s LIMIT 1", $parts[1]);
+                return $wpdb->get_row($sql) !== null;
+            }
+            return false;
+        } catch (Exception $e) {
+            return true;
+        }
     }
 }
