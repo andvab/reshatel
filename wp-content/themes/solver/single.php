@@ -17,7 +17,6 @@ the_post();
 <div id="articles" class="container" style="margin-top: 20px">
     <div class="row">
         <div class="span8">
-            <div class="article__title"><a href="/articles/" class="article__link">Статьи</a></div>
             <?php the_breadcrumb(); ?>
             <h1 class="post-title"><?php the_title() ?></h1>
             <div class="post-content">
