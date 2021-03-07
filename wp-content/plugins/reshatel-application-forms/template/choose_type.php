@@ -133,7 +133,7 @@
                         % &nbsp;
                         <select class="unique_selector" name="<?php echo $re_data['form']['name_fields']['site_unical']; ?>">
                             <option value="antiplagiat.ru">antiplagiat.ru</option>
-                            <option value="Антиплагиат.ВУЗ">Антиплагиат.ВУЗ</option>
+                            <option value="Антиплагиат.ВУЗ" selected>Антиплагиат.ВУЗ</option>
                             <option value="Руконтекст">Руконтекст</option>
                         </select>
                     </div>
