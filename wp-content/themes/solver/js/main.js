@@ -51,6 +51,10 @@ jQuery(function ($) {
         yaCounter20837425.reachGoal('lk-price');
         ga('send', 'event', 'button', 'lk-price');
     });
+    $('.mc-lk-order-bottom').on('click', function () {
+        yaCounter20837425.reachGoal('lk-price-bottom');
+        ga('send', 'event', 'button', 'lk-price-bottom');
+    });
     $('.job').on('click', function () {
         yaCounter20837425.reachGoal('vakansiya');
         ga('send', 'event', 'other', 'vakansiya');
