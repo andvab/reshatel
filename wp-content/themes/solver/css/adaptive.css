@@ -587,6 +587,9 @@
     .services {
         display: block;
     }
+    .main-numbers {
+        background-position: 75% 50%;
+    }
     .main-numbers_items {
         margin: 55px 0 45px;
     }
@@ -733,6 +736,9 @@
     }
     .number-block {
         padding-left: 5%;
+    }
+    .main-numbers {
+        background-position: center;
     }
 }
 @media screen and (max-width: 320px){
