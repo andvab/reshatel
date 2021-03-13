@@ -8,14 +8,20 @@ if (isset($numbers->error)) {
     return;
 }
 
-$numbersField = get_field('numbers', 5575);
+$mainPageId = 5575;
+
+$numbersField = get_field('numbers', $mainPageId);
 
 $numbersField['items'][0]['num'] = $numbers->age;
 $numbersField['items'][1]['num'] = number_format($numbers->orders, 0, '', ' ');
 $numbersField['items'][2]['num'] = number_format($numbers->users, 0, '', ' ');
 $numbersField['items'][3]['num'] = "{$numbers->grade}  <span>из 5</span>";
 
-update_field('numbers', $numbersField, 5575);
+update_field('numbers', $numbersField, $mainPageId);
+
+if (function_exists('wp_cache_clean_cache')) {
+    wpsc_delete_post_cache($mainPageId);
+}
 
 function request($url, $fields, $header = [])
 {
