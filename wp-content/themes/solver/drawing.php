@@ -43,6 +43,7 @@
     </div>
 
     <div class="general-form container">
+        <h2 class="general-form-header"><? the_field('h2'); ?></h2>
         <noindex>
             <?= do_shortcode('[reshatel_form name=drawing]'); ?>
         </noindex>
