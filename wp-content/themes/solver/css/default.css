@@ -973,6 +973,12 @@ path {
     text-align: center;
 }
 
+.general-form-header {
+    font-size: 24px;
+    color: #505050;
+    margin: 0 0 40px;
+}
+
 .form-hidden {
     visibility: hidden;
     position: absolute;
@@ -1353,7 +1359,7 @@ path {
 .article__title {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 10px;
     text-transform: uppercase;
     text-align: center;
