@@ -45,6 +45,13 @@
     })(window, document, "script");
 </script>
 
+<noindex>
+    <div class="legal-info">
+        <div class="container">
+            Внимание! Решатель не продает дипломы или любые другие документы. Также обратите внимание, что наши работы не предназначены для сдачи в учебном заведении! Услуги предоставляются исключительно в рамках законодательства РФ.
+        </div>
+    </div>
+</noindex>
 <header id="site-header" class="container">
     <div class="row">
         <div class="span4 header-left">

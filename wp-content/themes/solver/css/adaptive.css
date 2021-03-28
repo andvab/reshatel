@@ -605,6 +605,9 @@
         font-size: 15px;
         margin-top: 4px;
     }
+    .legal-info {
+        display: none;
+    }
 
 } @media screen and (max-width: 640px){
     #main-content .span4,

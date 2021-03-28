@@ -118,7 +118,8 @@ body {
 }
 
 #site-header {
-    margin-top: 25px;
+    /*margin-top: 25px;*/
+    margin-top: 50px;
     min-height: 120px;
 }
 
@@ -1956,4 +1957,18 @@ animation: promo 3s ease-in-out 1s 3 alternate;
 
 .grecaptcha-badge {
 display: none !important;
+}
+
+.legal-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #f5f5f5;
+    font-size: smaller;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    color: #272727;
 }
