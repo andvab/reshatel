@@ -167,7 +167,7 @@ class ROV {
         add_action('wp_head', function() use($order) {
             echo '<meta name="description" content="' . "$order->name - $order->type по $order->cat_dat на заказ" . '" />';
             if (iconv_strlen($order->comments) < 1000) {
-                echo '<meta name="robots" content="noindex, follow"/>';
+                echo '<meta name="robots" content="noindex, nofollow"/>';
             }
         });
 
