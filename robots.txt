@@ -16,6 +16,8 @@ Disallow: /xmlrpc.php
 Disallow: /*pdf
 Disallow: /*docx
 Disallow: /*doc
+Disallow: /kursovye-raboty/sankt-peterburg/
+Disallow: /kursovye-raboty/moskva/
 Allow: */uploads
 Allow: */plugins/bwp-minify
 Allow: */img/*
