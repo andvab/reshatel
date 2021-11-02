@@ -546,7 +546,8 @@
         padding: 0 20px;
     }
     .main-banner__top{
-        font-size: 30px;
+        font-size: 28px;
+        line-height: 40px;
         text-transform: uppercase;
     }
     .general-middle{

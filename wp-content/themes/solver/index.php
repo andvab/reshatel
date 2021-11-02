@@ -13,8 +13,8 @@
 
     <section class="main-banner">
         <div class="container">
-            <div class="main-banner__top">Поможем справиться с любым заданием!</div>
-            <div class="main-banner__bottom">Консультации опытных специалистов</div>
+            <h1 class="main-banner__top">Решатель - сервис помощи с выполнением студенческих работ</h1>
+            <h2 class="main-banner__bottom">Консультируем и помогаем студентам</h2>
             <a href="/uznat-stoimost/" rel="nofollow" class="banner-link mc-lk-order">Узнать стоимость</a>
         </div>
     </section>
