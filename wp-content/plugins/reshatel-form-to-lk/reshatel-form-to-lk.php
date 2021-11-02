@@ -34,8 +34,6 @@ class RFTL {
     public function get_cost_processing($content, $meta, $raw_content, $integrations) {
         global $fc_final_response;
 
-        $this->log('get_cost_processing!');
-
         $data = ['key' => KEY_API2];
 
         foreach ($raw_content as $field) {
