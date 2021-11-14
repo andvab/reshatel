@@ -18,33 +18,40 @@
 <body <?php body_class(); ?>>
 
 <script>
-    window.vkAsyncInit = function () {
-        VK.init({apiId: 127, onlyWidgets: true});
-        VK.Widgets.Group("vk_groups", {
-            redesign: 0,
-            mode: 3,
-            width: "300",
-            height: "250",
-            color1: 'FFFFFF',
-            color2: '000000',
-            color3: '198BFF'
-        }, 96800481);
-        // VK.Widgets.CommunityMessages("vk_community_messages", 96800481, {});
-    };
-
-    // Функция асинхронной загрузки
-    (function (a, c, f) {
-        function g() {
-            var d, a = c.getElementsByTagName(f)[0], b = function (b, e) {
-                c.getElementById(e) || (d = c.createElement(f), d.src = b, d.async = !0, e && (d.id = e), a.parentNode.insertBefore(d, a))
-            };
-            b("//vk.com/js/api/openapi.js");
-        }
-
-        a.addEventListener ? a.addEventListener("load", g, !1) : a.attachEvent && a.attachEvent("onload", g)
-    })(window, document, "script");
+    setTimeout(function () {
+        let vkSc = document.createElement("script");
+        vkSc.src = 'https://vk.com/js/api/openapi.js';
+        vkSc.async = true;
+        document.getElementsByTagName('head')[0].appendChild(vkSc);
+        vkSc.onload = function () {
+            document.getElementById("vk_comments").innerHTML='';
+            document.getElementById("vk_groups").innerHTML='';
+            VK.Widgets.Group("vk_groups", {
+                redesign: 0,
+                mode: 3,
+                width: "300",
+                height: "250",
+                color1: 'FFFFFF',
+                color2: '000000',
+                color3: '198BFF'
+            }, 96800481);
+            <? if (is_single()): ?>
+                VK.init({apiId: 3612780, onlyWidgets: true});
+                VK.Widgets.Comments("vk_comments", {limit: 10, width: "620", attach: "*", autoPublish: 0, pageUrl: "<? echo get_permalink(); ?>"});
+            <? else: ?>
+                VK.init({apiId: 3543059, onlyWidgets: true});
+                VK.Widgets.Comments("vk_comments", {
+                    redesign: 0,
+                    limit: 3,
+                    mini: "1",
+                    width: "100%",
+                    attach: "*",
+                    pageUrl: "http://reshatel.org/garantii/"
+                });
+            <? endif; ?>
+        };
+    }, 4000);
 </script>
-
 <noindex>
     <div class="legal-info">
         <div class="container">

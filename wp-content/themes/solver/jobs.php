@@ -14,6 +14,10 @@
     .grecaptcha-badge {
         display: block !important;
     }
+    #vk_comments_job,
+    #vk_comments_job iframe {
+        width: 100% !important;
+    }
 </style>
 
 <div id="content" class="container" style="margin-top: 20px">
@@ -35,9 +39,9 @@
         <script type="text/javascript">
             VK.init({apiId: 6698753, onlyWidgets: true});
         </script>
-        <div id="vk_comments"></div>
+        <div id="vk_comments_job"></div>
         <script type="text/javascript">
-            VK.Widgets.Comments("vk_comments", {redesign: 0, limit: 3, mini: "1", width: "100%", attach: "*", pageUrl: "https://reshatel.org/jobs/"});
+            VK.Widgets.Comments("vk_comments_job", {redesign: 0, limit: 3, mini: "1", width: "100%", attach: "*", pageUrl: "https://reshatel.org/jobs/"});
         </script>
     </div>
 

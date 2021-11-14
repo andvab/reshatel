@@ -161,3 +161,19 @@ function filter_aioseop_canonical_category($url) {
 add_filter('aioseo_canonical_url', 'filter_aioseop_canonical_category', 10, 1);
 
 add_theme_support('title-tag');
+
+function deregister_cf7_scripts()
+{
+    if (!is_page(148))
+        wp_deregister_script('contact-form-7');
+}
+
+add_action('wp_print_scripts', 'deregister_cf7_scripts', 100);
+
+function deregister_cf7_styles()
+{
+    if (!is_page(148))
+        wp_deregister_style('contact-form-7');
+}
+
+add_action('wp_print_styles', 'deregister_cf7_styles', 100);
