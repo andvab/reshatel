@@ -554,10 +554,6 @@ html.pum-open.pum-open-overlay.pum-open-scrollable body > [aria-hidden] {
 }
 
 .main-banner .banner-link {
-    visibility: hidden;
-}
-
-.main-banner .banner-link {
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -569,12 +565,6 @@ html.pum-open.pum-open-overlay.pum-open-scrollable body > [aria-hidden] {
     line-height: 60px;
     display: inline-block;
     width: 310px;
-
-    animation-name: flash-opacity-transform;
-    animation-duration: 1.2s;
-    animation-timing-function: ease;
-
-    visibility: visible !important;
     transition: background-color .3s;
 }
 
