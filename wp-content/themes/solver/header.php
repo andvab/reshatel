@@ -24,17 +24,22 @@
         vkSc.async = true;
         document.getElementsByTagName('head')[0].appendChild(vkSc);
         vkSc.onload = function () {
-            document.getElementById("vk_comments").innerHTML='';
-            document.getElementById("vk_groups").innerHTML='';
-            VK.Widgets.Group("vk_groups", {
-                redesign: 0,
-                mode: 3,
-                width: "300",
-                height: "250",
-                color1: 'FFFFFF',
-                color2: '000000',
-                color3: '198BFF'
-            }, 96800481);
+            let loader = document.getElementById("vk_groups");
+            if (loader) {
+                loader.innerHTML='';
+                VK.Widgets.Group("vk_groups", {
+                    redesign: 0,
+                    mode: 3,
+                    width: "300",
+                    height: "250",
+                    color1: 'FFFFFF',
+                    color2: '000000',
+                    color3: '198BFF'
+                }, 96800481);
+            }
+            loader = document.getElementById("vk_comments")
+            if (!loader) return;
+            loader.innerHTML='';
             <? if (is_single()): ?>
                 VK.init({apiId: 3612780, onlyWidgets: true});
                 VK.Widgets.Comments("vk_comments", {limit: 10, width: "620", attach: "*", autoPublish: 0, pageUrl: "<? echo get_permalink(); ?>"});
