@@ -90,7 +90,7 @@ $main_id = get_option('page_on_front');
     <div class="main-reviews container">
         <noindex>
             <div class="article__title">Отзывы</div>
-            <div id="vk_comments"></div>
+            <div id="vk_comments"><div class="lo-load"></div></div>
         </noindex>
     </div>
 

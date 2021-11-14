@@ -18,7 +18,7 @@ the_post();
                 <?php the_content(); ?>
                 <div class="post-share"></div>
                 <div class="post-comment">
-                    <div id="vk_comments"></div>
+                    <div id="vk_comments"><div class="lo-load"></div></div>
                 </div>
             </div>
         </div>
