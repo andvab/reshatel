@@ -256,6 +256,11 @@
     cursor: pointer;
 }
 
+.rv-select:enabled {
+    color: #000;
+}
+
+
 .rv-select:hover {
     background: #f4f4f4;
 }
