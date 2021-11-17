@@ -166,6 +166,8 @@ function deregister_cf7_scripts()
 {
     if (!is_page(148))
         wp_deregister_script('contact-form-7');
+        wp_deregister_script('google-recaptcha');
+        wp_deregister_script('wpcf7-recaptcha');
 }
 
 add_action('wp_print_scripts', 'deregister_cf7_scripts', 100);
