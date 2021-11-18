@@ -6,6 +6,8 @@
  * @subpackage Solver
  * @since Solver 1.0
  */
+define('DONOTCACHEPAGE', true); // For Hummingbird not to cache
+
 $page = filter_input(INPUT_GET, 'r', FILTER_VALIDATE_INT, ['options' => ['default' => 1, 'min_range' => 1]]);
 $type = filter_input(INPUT_GET, 'type', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
 $section = filter_input(INPUT_GET, 'section', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);

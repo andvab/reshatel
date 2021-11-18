@@ -35,7 +35,7 @@ function get_new_orders() {
         save_new_orders($result->orders);
     } while (count($result->orders) >= $max);
     
-    wpsc_delete_post_cache(7870);
+//    wpsc_delete_post_cache(7870); // Clear cache for WP Super Cache plugin
 }
 
 function save_new_orders($orders) {
