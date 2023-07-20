@@ -119,24 +119,6 @@
         </noindex>
     </div>
 
-    <div class="general-pay container">
-        <noindex>
-            <div class="general-title">Способы оплаты</div>
-        </noindex>
-        <div class="general-pay-block">
-            <?php
-            if (have_rows('pay')):
-                while (have_rows('pay')) : the_row();
-                    ?>
-                    <figure>
-                        <img src="<?php the_sub_field('pay_image'); ?>" alt="icon" >
-                        <img src="<?php the_sub_field('pay_image2'); ?>" alt="icon" >
-                    </figure>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </div>
-    </div>
-
     <div class="main-reviews container">
         <noindex>
             <div class="article__title">Отзывы</div>
