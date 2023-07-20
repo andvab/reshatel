@@ -7,7 +7,7 @@
                 'container' => false,
                 'walker' => new Menu_Walker('main-menu-footer'),
             )); ?>
-            <div class="copyright">Решатель © 2013 – 2022</div>
+            <div class="copyright">Решатель © 2013 – 2023</div>
         </div>
 
         <div class="span4">
