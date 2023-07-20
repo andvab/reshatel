@@ -16,41 +16,6 @@
         </div>    
     </div>
 
-    <div class="general-top row">
-        <div class="outer-slider">
-            <div class="inner-slider">
-                <?php
-                if (have_rows('top_part')):
-
-                    while (have_rows('top_part')) : the_row();
-                        ?>
-
-                        <div class="top-block span3">
-                            <figure>
-                                <img src="<?php the_sub_field('top_image'); ?>" alt="icon" >
-                            </figure>
-
-                            <div class="text-part">
-                                <noindex>
-                                    <?php the_sub_field('top_text'); ?>
-                                </noindex>
-                            </div>
-                        </div>
-
-
-
-                    <?php endwhile; ?>
-
-                <?php endif; ?>
-            </div>
-        </div>       
-        <ul class="caption">
-            <li class="caption-1">1</li>
-            <li class="caption-2">2</li>
-            <li class="caption-3">3</li>
-        </ul>        
-    </div>
-
     <div class="general-form container">
         <h2 class="general-form-header"><? the_field('h2'); ?></h2>
         <noindex>
@@ -58,7 +23,7 @@
         </noindex>
     </div>
 
-    <div class="general-how-much container">
+    <?/*<div class="general-how-much container">
         <div class="general-title">Сколько стоит наша помощь?</div>
         <?php
         if (have_rows('how_part')):
@@ -82,7 +47,7 @@
             <?php endwhile; ?>
 
         <?php endif; ?>
-    </div> 
+    </div>
 
     <div class="general-take container">
         <noindex>
@@ -107,7 +72,7 @@
 
             <?php endif; ?>
         </noindex>
-    </div>
+    </div>*/?>
 
     <div class="general-prob container">
         <?php if (have_rows('how_prob')): ?>
